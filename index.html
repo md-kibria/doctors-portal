@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors Portal</title>
+    <script src="./js/tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'med': '950px',
+                    },
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigaiton Section -->
+    <nav class="bg-green-600 h-16 flex items-center justify-between px-10 sm:px-16 md:px-20 med:px-24 lg:px-28 fixed w-full z-50">
+        <h1 class="text-3xl font-medium text-gray-100">Logo</h1>
+        <p class="block md:hidden text-white" onclick="toggle()">
+            <svg id="menu_menu_alt_04" data-name="menu / menu_alt_04" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 24 24">
+                <defs>
+                  <clipPath id="clip-path">
+                    <rect id="menu_menu_alt_04_Background_Mask_" data-name="menu / menu_alt_04 (Background/Mask)" width="24" height="24" fill="none"/>
+                  </clipPath>
+                </defs>
+                <g id="menu_menu_alt_04-2" data-name="menu / menu_alt_04">
+                  <rect id="menu_menu_alt_04_Background_Mask_2" data-name="menu / menu_alt_04 (Background/Mask)" width="24" height="24" fill="none"/>
+                  <g id="menu_menu_alt_04-3" data-name="menu / menu_alt_04" clip-path="url(#clip-path)">
+                    <path id="menu_menu_alt_04-4" data-name="menu / menu_alt_04" d="M18,12H0V10H18v2Zm0-5H0V5H18V7Zm0-5H9V0h9V2Z" transform="translate(3 6)" fill="#fff"/>
+                  </g>
+                </g>
+              </svg>
+        </p>
+        <ul id="nav-items" class="absolute w-full h-screen right-full mt-16 top-0 bg-slate-700 flex flex-col justify-center items-center md:static md:w-auto md:h-auto md:mt-0 md:bg-transparent md:flex-row transition duration-700 ease-in-out">
+            <li class="my-1 md:my-0">
+                <a class="text-white uppercase text-lg md:text-sm mx-2" href="#">Home</a>
+            </li>
+            <li class="my-1 md:my-0">
+                <a class="text-white uppercase text-lg md:text-sm mx-2" href="#">Appoinment</a>
+            </li>
+            <li class="my-1 md:my-0">
+                <a class="text-white uppercase text-lg md:text-sm mx-2" href="#">Blogs</a>
+            </li>
+            <li class="my-1 md:my-0">
+                <a class="text-white uppercase text-lg md:text-sm mx-2" href="#">Contact</a>
+            </li>
+            <li class="my-1 md:my-0">
+                <a class="text-white uppercase text-lg md:text-sm mx-2" href="#">About</a>
+            </li>
+        </ul>
+    </nav>
+    <!--!! Navigaiton Section !!-->
+    <main>
+        <!-- Hero Section -->
+        <div class="min-h-screen flex lg:flex-row md:flex-col">
+            <div class="bg-gray-300 flex flex-col justify-center px-10 sm:px-24 lg:px-28 lg:w-3/4 md:w-full py-44 lg:py-0">
+                <div class="md:w-4/5">
+                    <h1 class="text-slate-700 text-6xl py-4 ">Your News Smile Sports here</h1>
+                    <p class="text-slate-600 text-md text-xl mt-1 mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non dignissimos vitae, hic dolorem, animi magni
+                    </p>
+                    <button class="bg-green-600 text-white p-2 px-3 rounded my-3 ">Learn More</button>
+                </div>
+            </div>
+            <div class="bg-slate-600 hidden lg:flex items-center lg:w-2/5 md:w-full md:none">
+                <img src="./images/bg.png " alt=" " class="lg:w-full md:w-96 -ml-32 ">
+            </div>
+        </div>
+        <!--!! Hero Section !!-->
+        <!-- TLD Section -->
+        <div class="tld flex flex-col mx-12 sm:mx-28 md:mx-36 med:mx-40 lg:flex-row justify-center -mt-16 z-20">
+            <!-- Single TLD -->
+            <div class="bg-green-600 flex m-2 rounded p-2">
+                <div class="icon text-grey-100 h-16 w-14 my-auto mx-2">
+                    <svg id="basic_clock" data-name="basic / clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_clock_Background_Mask_" data-name="basic / clock (Background/Mask)"
+                                    width="50" height="50" fill="#fff" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_clock-2" data-name="basic / clock">
+                            <rect id="basic_clock_Background_Mask_2" data-name="basic / clock (Background/Mask)"
+                                width="50" height="50" fill="none" />
+                            <g id="basic_clock-3" data-name="basic / clock" clip-path="url(#clip-path)">
+                                <path id="basic_clock-4" data-name="basic / clock"
+                                    d="M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20ZM10,2a8,8,0,1,0,8,8A8.009,8.009,0,0,0,10,2Zm5,9H9V5h2V9h4v2Z"
+                                    transform="translate(2 2)" fill="#fff" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="my-4 mx-2">
+                    <h3 class="text-2xl text-gray-100">Timing</h3>
+                    <p class="text-gray-100">Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+            <!--!! Single TLD !!-->
+            <!-- Single TLD -->
+            <div class="bg-slate-500 flex m-2 rounded p-2">
+                <div class="icon text-grey-100 h-16 w-14 my-auto mx-2">
+                    <svg id="basic_location_outline" data-name="basic / location_outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_location_outline_Background_Mask_"
+                                    data-name="basic / location_outline (Background/Mask)" width="24" height="24"
+                                    fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_location_outline-2" data-name="basic / location_outline">
+                            <rect id="basic_location_outline_Background_Mask_2"
+                                data-name="basic / location_outline (Background/Mask)" width="60" height="60"
+                                fill="none" />
+                            <g id="basic_location_outline-3" data-name="basic / location_outline"
+                                clip-path="url(#clip-path)">
+                                <path id="basic_location_outline-4" data-name="basic / location_outline"
+                                    d="M7,18H7a29.774,29.774,0,0,1-3.5-3.531C1.9,12.558,0,9.712,0,7A7,7,0,0,1,11.952,2.049,6.955,6.955,0,0,1,14,7c0,2.712-1.9,5.558-3.5,7.469A29.774,29.774,0,0,1,7,18ZM7,2A5.006,5.006,0,0,0,2,7c0,1.166.527,3.185,3.035,6.186A27.937,27.937,0,0,0,7,15.3a28.1,28.1,0,0,0,1.966-2.111C11.473,10.184,12,8.165,12,7A5.006,5.006,0,0,0,7,2Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,7,10Z"
+                                    transform="translate(5 3)" fill="#fff" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="my-4 mx-2">
+                    <h3 class="text-2xl text-gray-100">Location</h3>
+                    <p class="text-gray-100">Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+            <!--!! Single TLD !!-->
+            <!-- Single TLD -->
+            <div class="bg-green-600 flex m-2 rounded p-2">
+                <div class="icon text-grey-100 h-16 w-14 my-auto mx-2">
+                    <svg id="basic_map" data-name="basic / map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_map_Background_Mask_" data-name="basic / map (Background/Mask)"
+                                    width="24" height="24" fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_map-2" data-name="basic / map">
+                            <rect id="basic_map_Background_Mask_2" data-name="basic / map (Background/Mask)" width="24"
+                                height="24" fill="none" />
+                            <g id="basic_map-3" data-name="basic / map" clip-path="url(#clip-path)">
+                                <path id="basic_map-4" data-name="basic / map"
+                                    d="M7.108,20.2h0L0,17.829V1.721l6.892,2.3L13.923,0,20,2.431V18.585l-5.923-2.37L7.109,20.2ZM2,4.5V16.387L6,17.72V5.828ZM12,3.4h0L8,5.688v11.7L12,15.1V3.4Zm2.077-1.186L14,2.26V14.031l4,1.6V3.784Z"
+                                    transform="translate(2 1.892)" fill="#fff" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="my-4 mx-2">
+                    <h3 class="text-2xl text-gray-100">Doctors</h3>
+                    <p class="text-gray-100">Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+            <!--!! Single TLD !!-->
+        </div>
+        <!--!! TLD Section !!-->
+
+        <!-- Service Section -->
+        <div class="services min-h-screen flex flex-col justify-center mt-40">
+            <div class="sub-title text-center">
+                <a href="#" class="text-green-600 text-lg uppercase">Our Services</a>
+                <h3 class="text-4xl text-slate-700">Service We Provides</h3>
+            </div>
+
+            <div class="service-section w-4/5 mx-auto my-9 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Single Service Item -->
+                <div class="service flex flex-col items-center border border-green-600 p-4 rounded-lg hover:shadow-xl transition-shadow duration-200 shadow-green-700 ease-in-out">
+                    <svg id="basic_heart_outline" data-name="basic / heart_outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_heart_outline_Background_Mask_"
+                                    data-name="basic / heart_outline (Background/Mask)" width="24" height="24"
+                                    fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_heart_outline-2" data-name="basic / heart_outline">
+                            <rect id="basic_heart_outline_Background_Mask_2"
+                                data-name="basic / heart_outline (Background/Mask)" width="24" height="24"
+                                fill="none" />
+                            <g id="basic_heart_outline-3" data-name="basic / heart_outline" clip-path="url(#clip-path)">
+                                <path id="basic_heart_outline-4" data-name="basic / heart_outline"
+                                    d="M10,18h0c-.645-.572-1.374-1.167-2.145-1.8L7.845,16.2C5.13,13.98,2.053,11.468.694,8.458A7.422,7.422,0,0,1,0,5.4,5.39,5.39,0,0,1,5.5,0,6.158,6.158,0,0,1,8.828.983,5.6,5.6,0,0,1,10,2,5.78,5.78,0,0,1,11.173.983,6.152,6.152,0,0,1,14.5,0,5.39,5.39,0,0,1,20,5.4a7.422,7.422,0,0,1-.694,3.063c-1.359,3.01-4.435,5.521-7.15,7.737l-.01.008c-.772.629-1.5,1.224-2.145,1.8ZM5.5,2A3.535,3.535,0,0,0,3,2.992,3.342,3.342,0,0,0,2,5.4a5.453,5.453,0,0,0,.512,2.228A12.315,12.315,0,0,0,5.069,11.1C6.06,12.1,7.2,13.068,8.186,13.882c.273.225.551.452.829.679l.175.143c.267.218.543.444.81.666l.013-.012.006-.005.006,0,.009-.007h0l.005,0,.005,0,.018-.015,0,0,.041-.033h0l.007-.006.011-.008.006,0h0l0,0,.009-.008.664-.545.174-.143c.281-.229.559-.456.832-.681.986-.814,2.127-1.781,3.118-2.786a12.3,12.3,0,0,0,2.557-3.471A5.438,5.438,0,0,0,18,5.4a3.343,3.343,0,0,0-1-2.4A3.535,3.535,0,0,0,14.5,2a3.988,3.988,0,0,0-2.99,1.311L10,5.051,8.49,3.311A3.988,3.988,0,0,0,5.5,2Z"
+                                    transform="translate(2 3)" fill="#2e3a59" />
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="desc flex flex-col items-center">
+                        <h4 class="text-slate-700 text-2xl font-medium">Love</h4>
+                        <p class="text-gray-700 text-lg text-center">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quo? Et, delectus reprehenderit.
+                        </p>
+                    </div>
+                </div>
+                <!--!! Single Service Item !!-->
+                <!-- Single Service Item -->
+                <div class="service flex flex-col items-center border border-green-600 p-4 rounded-lg hover:shadow-xl transition-shadow duration-200 shadow-green-700 ease-in-out">
+                    <svg id="basic_done_all" data-name="basic / done_all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_done_all_Background_Mask_"
+                                    data-name="basic / done_all (Background/Mask)" width="24" height="24" fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_done_all-2" data-name="basic / done_all">
+                            <rect id="basic_done_all_Background_Mask_2" data-name="basic / done_all (Background/Mask)"
+                                width="24" height="24" fill="none" />
+                            <g id="basic_done_all-3" data-name="basic / done_all" clip-path="url(#clip-path)">
+                                <path id="basic_done_all-4" data-name="basic / done_all"
+                                    d="M9.193,12.02h0L4.243,7.071,5.656,5.656,9.193,9.193,17.678.707l1.414,1.414-9.9,9.9Zm-4.243,0h0L0,7.071,1.414,5.656l4.95,4.95L4.951,12.02ZM9.193,7.778h0L7.778,6.364,14.142,0l1.415,1.414L9.193,7.777Z"
+                                    transform="translate(2.454 5.99)" fill="#2e3a59" />
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="desc flex flex-col items-center">
+                        <h4 class="text-slate-700 text-2xl font-medium">Careful</h4>
+                        <p class="text-gray-700 text-lg text-center">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quo? Et, delectus reprehenderit.
+                        </p>
+                    </div>
+                </div>
+                <!--!! Single Service Item !!-->
+                <!-- Single Service Item -->
+                <div class="service flex flex-col items-center border border-green-600 p-4 rounded-lg hover:shadow-xl transition-shadow duration-200 shadow-green-700 ease-in-out">
+                    <svg id="basic_settings_future" data-name="basic / settings_future" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_settings_future_Background_Mask_"
+                                    data-name="basic / settings_future (Background/Mask)" width="24" height="24"
+                                    fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_settings_future-2" data-name="basic / settings_future">
+                            <rect id="basic_settings_future_Background_Mask_2"
+                                data-name="basic / settings_future (Background/Mask)" width="24" height="24"
+                                fill="none" />
+                            <g id="basic_settings_future-3" data-name="basic / settings_future"
+                                clip-path="url(#clip-path)">
+                                <path id="basic_settings_future-4" data-name="basic / settings_future"
+                                    d="M9.5,22h0L0,16.5V5.5L9.5,0,19,5.5v11L9.5,22Zm0-19.688h0L2,6.653v8.694l7.5,4.342L17,15.347V6.653L9.5,2.311ZM9.5,15a4.028,4.028,0,0,1-2.829-1.172A4,4,0,0,1,9.5,7a4.024,4.024,0,0,1,2.828,1.172,4,4,0,0,1,0,5.656A4.027,4.027,0,0,1,9.5,15Zm0-6a2,2,0,1,0,1.414.586A1.988,1.988,0,0,0,9.5,9Z"
+                                    transform="translate(2.5 1)" fill="#2e3a59" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <div class="desc flex flex-col items-center">
+                        <h4 class="text-slate-700 text-2xl font-medium">Strong Service</h4>
+                        <p class="text-gray-700 text-lg text-center">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quo? Et, delectus reprehenderit.
+                        </p>
+                    </div>
+                </div>
+                <!--!! Single Service Item !!-->
+                <!-- Single Service Item -->
+                <div class="service flex flex-col items-center border border-green-600 p-4 rounded-lg hover:shadow-xl transition-shadow duration-200 shadow-green-700 ease-in-out">
+                    <svg id="basic_heart_outline" data-name="basic / heart_outline" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_heart_outline_Background_Mask_"
+                                    data-name="basic / heart_outline (Background/Mask)" width="24" height="24"
+                                    fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_heart_outline-2" data-name="basic / heart_outline">
+                            <rect id="basic_heart_outline_Background_Mask_2"
+                                data-name="basic / heart_outline (Background/Mask)" width="24" height="24"
+                                fill="none" />
+                            <g id="basic_heart_outline-3" data-name="basic / heart_outline" clip-path="url(#clip-path)">
+                                <path id="basic_heart_outline-4" data-name="basic / heart_outline"
+                                    d="M10,18h0c-.645-.572-1.374-1.167-2.145-1.8L7.845,16.2C5.13,13.98,2.053,11.468.694,8.458A7.422,7.422,0,0,1,0,5.4,5.39,5.39,0,0,1,5.5,0,6.158,6.158,0,0,1,8.828.983,5.6,5.6,0,0,1,10,2,5.78,5.78,0,0,1,11.173.983,6.152,6.152,0,0,1,14.5,0,5.39,5.39,0,0,1,20,5.4a7.422,7.422,0,0,1-.694,3.063c-1.359,3.01-4.435,5.521-7.15,7.737l-.01.008c-.772.629-1.5,1.224-2.145,1.8ZM5.5,2A3.535,3.535,0,0,0,3,2.992,3.342,3.342,0,0,0,2,5.4a5.453,5.453,0,0,0,.512,2.228A12.315,12.315,0,0,0,5.069,11.1C6.06,12.1,7.2,13.068,8.186,13.882c.273.225.551.452.829.679l.175.143c.267.218.543.444.81.666l.013-.012.006-.005.006,0,.009-.007h0l.005,0,.005,0,.018-.015,0,0,.041-.033h0l.007-.006.011-.008.006,0h0l0,0,.009-.008.664-.545.174-.143c.281-.229.559-.456.832-.681.986-.814,2.127-1.781,3.118-2.786a12.3,12.3,0,0,0,2.557-3.471A5.438,5.438,0,0,0,18,5.4a3.343,3.343,0,0,0-1-2.4A3.535,3.535,0,0,0,14.5,2a3.988,3.988,0,0,0-2.99,1.311L10,5.051,8.49,3.311A3.988,3.988,0,0,0,5.5,2Z"
+                                    transform="translate(2 3)" fill="#2e3a59" />
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="desc flex flex-col items-center">
+                        <h4 class="text-slate-700 text-2xl font-medium">Love</h4>
+                        <p class="text-gray-700 text-lg text-center">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quo? Et, delectus reprehenderit.
+                        </p>
+                    </div>
+                </div>
+                <!--!! Single Service Item !!-->
+                <!-- Single Service Item -->
+                <div class="service flex flex-col items-center border border-green-600 p-4 rounded-lg hover:shadow-xl transition-shadow duration-200 shadow-green-700 ease-in-out">
+                    <svg id="basic_done_all" data-name="basic / done_all" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_done_all_Background_Mask_"
+                                    data-name="basic / done_all (Background/Mask)" width="24" height="24" fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_done_all-2" data-name="basic / done_all">
+                            <rect id="basic_done_all_Background_Mask_2" data-name="basic / done_all (Background/Mask)"
+                                width="24" height="24" fill="none" />
+                            <g id="basic_done_all-3" data-name="basic / done_all" clip-path="url(#clip-path)">
+                                <path id="basic_done_all-4" data-name="basic / done_all"
+                                    d="M9.193,12.02h0L4.243,7.071,5.656,5.656,9.193,9.193,17.678.707l1.414,1.414-9.9,9.9Zm-4.243,0h0L0,7.071,1.414,5.656l4.95,4.95L4.951,12.02ZM9.193,7.778h0L7.778,6.364,14.142,0l1.415,1.414L9.193,7.777Z"
+                                    transform="translate(2.454 5.99)" fill="#2e3a59" />
+                            </g>
+                        </g>
+                    </svg>
+                    <div class="desc flex flex-col items-center">
+                        <h4 class="text-slate-700 text-2xl font-medium">Careful</h4>
+                        <p class="text-gray-700 text-lg text-center">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quo? Et, delectus reprehenderit.
+                        </p>
+                    </div>
+                </div>
+                <!--!! Single Service Item !!-->
+                <!-- Single Service Item -->
+                <div class="service flex flex-col items-center border border-green-600 p-4 rounded-lg hover:shadow-xl transition-shadow duration-200 shadow-green-700 ease-in-out">
+                    <svg id="basic_settings_future" data-name="basic / settings_future" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 24 24">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="basic_settings_future_Background_Mask_"
+                                    data-name="basic / settings_future (Background/Mask)" width="24" height="24"
+                                    fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="basic_settings_future-2" data-name="basic / settings_future">
+                            <rect id="basic_settings_future_Background_Mask_2"
+                                data-name="basic / settings_future (Background/Mask)" width="24" height="24"
+                                fill="none" />
+                            <g id="basic_settings_future-3" data-name="basic / settings_future"
+                                clip-path="url(#clip-path)">
+                                <path id="basic_settings_future-4" data-name="basic / settings_future"
+                                    d="M9.5,22h0L0,16.5V5.5L9.5,0,19,5.5v11L9.5,22Zm0-19.688h0L2,6.653v8.694l7.5,4.342L17,15.347V6.653L9.5,2.311ZM9.5,15a4.028,4.028,0,0,1-2.829-1.172A4,4,0,0,1,9.5,7a4.024,4.024,0,0,1,2.828,1.172,4,4,0,0,1,0,5.656A4.027,4.027,0,0,1,9.5,15Zm0-6a2,2,0,1,0,1.414.586A1.988,1.988,0,0,0,9.5,9Z"
+                                    transform="translate(2.5 1)" fill="#2e3a59" />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <div class="desc flex flex-col items-center">
+                        <h4 class="text-slate-700 text-2xl font-medium">Strong Service</h4>
+                        <p class="text-gray-700 text-lg text-center">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quo? Et, delectus reprehenderit.
+                        </p>
+                    </div>
+                </div>
+                <!--!! Single Service Item !!-->
+
+            </div>
+        </div>
+        <!--!! Service Section !!-->
+
+        <!-- About Section -->
+        <div class="about min-h-screen flex items-center justify-center mx-0 md:mx-16 med:mx-28 flex-col lg:flex-row">
+            <div class="w sm:w-1/2 lg:w-2/5">
+                <img class="w-full" src="./images/doctor 1.jpg" alt="">
+            </div>
+            <div class="desc w-full px-10 lg:px-0 lg:w-3/5 ">
+                <h3 class="text-4xl text-green-700 py-3 text-center lg:text-left">Lorem ipsum dolor</h3>
+                <hr class="pb-2" />
+                <p class="text-slate-700 text-lg text-center lg:text-left">Sit amet consectetur adipisicing elit. Ipsam asperiores deserunt ab! Tempora praesentium consequuntur veritatis maxime quas? Consequuntur, architecto esse. Veniam consequuntur similique expedita, vitae molestias ex...
+                </p>
+                <button class="p-1 px-3 text-green-700 my-4 bg-transform border-2 border-gray-400 rounded-md uppercase transition-all hover:bg-green-600 hover:text-white mx-auto block lg:mx-0">More
+                    About</button>
+            </div>
+        </div>
+        <!--!! About Section !!-->
+
+        <!-- Appointment Seciton -->
+        <div class="min-h-screen flex items-center">
+            <div class="bg-slate-500 h-4/5 sm:h-4/6 w-full px-10 sm:px-16 med:px-28 flex">
+                <div class="w-full lg:w-3/5 flex flex-col justify-center">
+                    <div class="sub-title text-left mt-10">
+                        <a href="#" class="text-green-600 text-lg uppercase">Appointment</a>
+                        <h3 class="text-4xl text-slate-700">Make an Appointment Today</h3>
+                    </div>
+                    <form action="" method="post" class="my-3">
+                        <div class="block sm:flex">
+                            <div class="mr-4">
+
+                                <input type="text" class="my-2 border border-gray-200 rounded p-2 w-full" name="name" placeholder="Your name" />
+                                <!-- <p class="text-red-500 text-xs mt-1">Error message here</p> -->
+                            </div>
+                            <div class="mr-4">
+
+                                <input type="date" class="my-2 border border-gray-200 rounded p-2 w-full" name="date" />
+                                <!-- <p class="text-red-500 text-xs mt-1">Error message here</p> -->
+                            </div>
+                        </div>
+                        <div class="block sm:flex">
+                            <div class="mr-4">
+
+                                <input type="email" class="my-2 border border-gray-200 rounded p-2 w-full" name="email" placeholder="Your email address" />
+                                <!-- <p class="text-red-500 text-xs mt-1">Error message here</p> -->
+                            </div>
+                            <div class="mr-4">
+
+                                <input type="number" class="my-2 border border-gray-200 rounded p-2 w-full" name="phone" placeholder="Your phone number" />
+                                <!-- <p class="text-red-500 text-xs mt-1">Error message here</p> -->
+                            </div>
+                        </div>
+                        <input type="submit" class="my-2 border border-gray-200 rounded p-2 px-4 bg-green-600 border border-sky-700 text-white transition-all hover:bg-green-400 hover:text-slate-800" value="Submit" />
+                    </form>
+                </div>
+                <div class="w-2/5 hidden lg:block">
+                    <img class="w-96 h-144" style="margin-top: -97px;" src="./images/doctor 2_2.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!--!! Appointment Seciton !!-->
+
+        <!-- Feedback Section -->
+        <div class="min-h-screen mx-10 sm:mx-28 md:mx-16 med:mx-28 flex flex-col justify-center">
+            <div class="sub-title text-left mt-10">
+                <a href="#" class="text-green-600 text-lg uppercase">Feedback</a>
+                <h3 class="text-4xl text-slate-700">What's Our Patiants Says</h3>
+            </div>
+            <hr class="mt-4 mb-6" />
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Single Feedback -->
+                <div class="feedback border border-slate-500 p-4 rounded m-3">
+                    <p class="text-slate-700 text-lg mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, at? A dolorem archi tecto deserunt </p>
+                    <div class="flex">
+                        <img class="" src="./images/icons8-github-50.png" alt="">
+                        <div class="ml-4 pl-4 border-l border-slate-500">
+                            <h3 class="text-xl">John Doe</h3>
+                            <span class="text-gray-500">Work on somewhere</span>
+                        </div>
+                    </div>
+                </div>
+                <!--!! Single Feedback !!-->
+                <!-- Single Feedback -->
+                <div class="feedback border border-slate-500 p-4 rounded m-3">
+                    <p class="text-slate-700 text-lg mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, at? A dolorem archi tecto deserunt</p>
+                    <div class="flex">
+                        <img class="" src="./images/icons8-github-50.png" alt="">
+                        <div class="ml-4 pl-4 border-l border-slate-500">
+                            <h3 class="text-xl">John Doe</h3>
+                            <span class="text-gray-500">Work on somewhere</span>
+                        </div>
+                    </div>
+                </div>
+                <!--!! Single Feedback !!-->
+                <!-- Single Feedback -->
+                <div class="feedback border border-slate-500 p-4 rounded m-3">
+                    <p class="text-slate-700 text-lg mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, at? A dolorem archi tecto deserunt</p>
+                    <div class="flex">
+                        <img class="" src="./images/icons8-github-50.png" alt="">
+                        <div class="ml-4 pl-4 border-l border-slate-500">
+                            <h3 class="text-xl">John Doe</h3>
+                            <span class="text-gray-500">Work on somewhere</span>
+                        </div>
+                    </div>
+                </div>
+                <!--!! Single Feedback !!-->
+            </div>
+        </div>
+        <!--!! Feedback Section !!-->
+
+        <!-- Contact Section -->
+        <div class="min-h-screen flex flex-col justify-center">
+            <div class="sub-title text-center mt-10">
+                <a href="#" class="text-green-600 text-lg uppercase">Contact</a>
+                <h3 class="text-4xl text-slate-700">Contact With Us</h3>
+            </div>
+
+            <div class="flex justify-center px-10 sm:px-28 md:px-10 med:px-28 flex-col-reverse md:flex-row">
+                <form action="" method="post" class="my-3 w-full md:w-2/5">
+                    <div class="mr-4">
+
+                        <input type="text" class="my-2 border border-gray-200 rounded p-2 w-full" name="name" placeholder="Your name" />
+                        <!-- <p class="text-red-500 text-xs mt-1">Error message here</p> -->
+                    </div>
+                    <div class="mr-4">
+
+                        <input type="email" class="my-2 border border-gray-200 rounded p-2 w-full" name="email" placeholder="Your email address" />
+                        <!-- <p class="text-red-500 text-xs mt-1">Error message here</p> -->
+                    </div>
+                    <div class="mr-4">
+
+                        <textarea class="my-2 border border-gray-200 rounded p-2 w-full" rows="5" name="msg" placeholder="Your message"></textarea>
+                        <!-- <p class="text-red-500 text-xs mt-1">Error message here</p> -->
+                    </div>
+
+                    <input type="submit" class="my-2 border border-gray-200 rounded p-2 px-4 bg-green-600 border border-sky-700 text-white transition-all hover:bg-green-400 hover:text-slate-800" value="Send" />
+                </form>
+
+                <div class="my-3 w-full md:w-2/5 flex flex-col justify-center md:pl-10 md:-mt-10 text-center md:text-left items-center md:items-start my-10 md:my-0">
+                    <p class="text-lg my-2 text-slate-900 font-medium">Contact us and we'll get back to you within 24 hours.</p>
+                    <ul class="">
+                        <li class="flex my-2 justify-center md:justify-start"><span>
+                                <svg id="basic_location_outline" data-name="basic / location_outline"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="basic_location_outline_Background_Mask_"
+                                                data-name="basic / location_outline (Background/Mask)" width="24"
+                                                height="24" fill="none" />
+                                        </clipPath>
+                                    </defs>
+                                    <g id="basic_location_outline-2" data-name="basic / location_outline">
+                                        <rect id="basic_location_outline_Background_Mask_2"
+                                            data-name="basic / location_outline (Background/Mask)" width="24"
+                                            height="24" fill="none" />
+                                        <g id="basic_location_outline-3" data-name="basic / location_outline"
+                                            clip-path="url(#clip-path)">
+                                            <path id="basic_location_outline-4" data-name="basic / location_outline"
+                                                d="M7,18H7a29.774,29.774,0,0,1-3.5-3.531C1.9,12.558,0,9.712,0,7A7,7,0,0,1,11.952,2.049,6.955,6.955,0,0,1,14,7c0,2.712-1.9,5.558-3.5,7.469A29.774,29.774,0,0,1,7,18ZM7,2A5.006,5.006,0,0,0,2,7c0,1.166.527,3.185,3.035,6.186A27.937,27.937,0,0,0,7,15.3a28.1,28.1,0,0,0,1.966-2.111C11.473,10.184,12,8.165,12,7A5.006,5.006,0,0,0,7,2Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,7,10Z"
+                                                transform="translate(5 3)" fill="#2e3a59" />
+                                        </g>
+                                    </g>
+                                </svg>
+
+                            </span>
+                            <span class="text-slate-900 text-lg -mt-1 ml-1">Dhaka, BD</span>
+                        </li>
+                        <li class="flex my-2 justify-center md:justify-start">
+                            <span>
+                                <svg id="basic_phone" data-name="basic / phone" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="basic_phone_Background_Mask_"
+                                                data-name="basic / phone (Background/Mask)" width="24" height="24"
+                                                fill="none" />
+                                        </clipPath>
+                                    </defs>
+                                    <g id="basic_phone-2" data-name="basic / phone">
+                                        <rect id="basic_phone_Background_Mask_2"
+                                            data-name="basic / phone (Background/Mask)" width="24" height="24"
+                                            fill="none" />
+                                        <g id="basic_phone-3" data-name="basic / phone" clip-path="url(#clip-path)">
+                                            <path id="basic_phone-4" data-name="basic / phone"
+                                                d="M14.6,19.006h-.028A15.33,15.33,0,0,1,4.3,14.708,15.313,15.313,0,0,1,0,4.441,2,2,0,0,1,.586,3.005L3.3.293a1,1,0,0,1,1.414,0l4,4a1,1,0,0,1,0,1.414L7.118,7.3a7.5,7.5,0,0,0,1.594,2.992A7.485,7.485,0,0,0,11.7,11.887L13.3,10.293a1,1,0,0,1,1.414,0l4,4a1,1,0,0,1,0,1.414L16,18.42A1.976,1.976,0,0,1,14.6,19.006ZM4.005,2.415H4L2,4.419a13.245,13.245,0,0,0,3.712,8.874,13.252,13.252,0,0,0,8.873,3.712L16.592,15,14,12.415l-1.293,1.292a.987.987,0,0,1-.7.293,1,1,0,0,1-.209-.022,10.2,10.2,0,0,1-4.5-2.271,10.2,10.2,0,0,1-2.271-4.5A1,1,0,0,1,5.3,6.293L6.592,5,4.005,2.415Z"
+                                                transform="translate(2.995 2)" fill="#2e3a59" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span class="text-slate-900 text-lg -mt-1 ml-1">+88 017123 456</span>
+                        </li>
+                        <li class="flex my-2 justify-center md:justify-start">
+                            <span>
+                                <svg id="basic_mail_open" data-name="basic / mail_open"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="basic_mail_open_Background_Mask_"
+                                                data-name="basic / mail_open (Background/Mask)" width="24" height="24"
+                                                fill="none" />
+                                        </clipPath>
+                                    </defs>
+                                    <g id="basic_mail_open-2" data-name="basic / mail_open">
+                                        <rect id="basic_mail_open_Background_Mask_2"
+                                            data-name="basic / mail_open (Background/Mask)" width="24" height="24"
+                                            fill="none" />
+                                        <g id="basic_mail_open-3" data-name="basic / mail_open"
+                                            clip-path="url(#clip-path)">
+                                            <path id="basic_mail_open-4" data-name="basic / mail_open"
+                                                d="M18,19.668H2a2,2,0,0,1-2-2V6.717A2.031,2.031,0,0,1,.971,5.085l8-4.8a2,2,0,0,1,2.057,0l8,4.8A2.011,2.011,0,0,1,20,6.8V17.668A2,2,0,0,1,18,19.668ZM2,7.536V17.668H18V7.536l-8,5.333ZM10,2,3.316,6.01,10,10.466,16.683,6.01,10,2h0Z"
+                                                transform="translate(2 2.332)" fill="#2e3a59" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span class="text-slate-900 text-lg -mt-1 ml-1">mymail@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-48 my-10 gap-4">
+
+                <div class="flex py-4 px-6 border shadow-md shadow-slate-500 rounded w-72">
+                    <img class="my-auto h-16" src="./images/icons8-new-post-50.png" alt="">
+                    <div class="mx-4">
+                        <h3 class="text-xl">Email</h3>
+                        <p class="text-gray-600">test@test.com</p>
+                        <p class="text-gray-600">me@test.com</p>
+                    </div>
+                </div>
+
+
+                <div class="flex py-4 px-6 border shadow-md shadow-slate-500 rounded w-72">
+                    <img class="my-auto h-16" src="./images/icons8-phone-50.png" alt="">
+                    <div class="mx-4">
+                        <h3 class="text-xl">Phone</h3>
+                        <p class="text-gray-600">+88 017997-16788</p>
+                        <p class="text-gray-600">+88 017997-16788</p>
+                    </div>
+                </div>
+
+
+                <div class="flex py-4 px-6 border shadow-md shadow-slate-500 rounded w-72">
+                    <img class="my-auto h-16" src="./images/icons8-map-marker-50.png" alt="">
+                    <div class="mx-4">
+                        <h3 class="text-xl">Email</h3>
+                        <p class="text-gray-600">Dhamrai, Dhaka, Bangladesh</p>
+                    </div>
+                </div>
+
+            </div> -->
+        </div>
+        <!--!! Contact Section !!-->
+    </main>
+    <!-- Footer Section -->
+    <footer class="min-h-screen bg-slate-800 flex flex-col justify-center relative">
+        <div class="flex flex-col items-center pt-16 md:pt-0 md:py-5">
+            <h1 class="text-5xl text-green-500">Doctors Portal</h1>
+            <p class="text-gray-300 text-lg py-2">Your Complete Health Solution</p>
+            <form action="" method="post" class="my-3">
+                <input type="email" placeholder="yourmail@gmail.com" class="bg-slate-800 border border-gray-600 py-1 px-3 text-lg text-white rounded">
+                <input type="submit" value="Subscribe" class="bg-slate-900 border border-gray-600 py-1 px-3 text-lg text-white rounded cursor-pointer hover:bg-slate-700">
+            </form>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 mx-16 md:mx-48 med:mx-60">
+            <div class="my-2">
+                <h3 class="text-2xl text-gray-200 font-medium my-2">About US</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="text-slate-400">How its work</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Tastomonial</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Invension</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Term of Service</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="my-2">
+                <h3 class="text-2xl text-gray-200 font-medium my-2">Contact US</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="text-slate-400">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Support</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Destination</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Sponsership</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="my-2">
+                <h3 class="text-2xl text-gray-200 font-medium my-2">Video</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="text-slate-400">Submit Video</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Ambassador </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Agnecy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Influencer</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="my-2">
+                <h3 class="text-2xl text-gray-200 font-medium my-2">Social Media</h3>
+                <ul>
+                    <li>
+                        <a href="#" class="text-slate-400">Instragram</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">YouTube</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-slate-400">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 w-full mt-7 med:mt-0 med:mb-7 ml-0 med:absolute bottom-0">
+            <h1 class="text-2xl font-medium text-slate-500 ml-0 text-center md:text-left md:ml-28">Logo</h1>
+            <p class="text-medium text-slate-500 text-center hidden md:block">&copy;Copyright Agency 2022</p>
+            <ul class="flex justify-center my-2 md:my-0 md:justify-end md:mr-28">
+                <li>
+                    <a href="#">
+                        <img class="h-8 px-1" style="filter: grayscale(100%);" src="./images/icons8-facebook-50.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="h-8 px-1" style="filter: grayscale(100%);" src="./images/icons8-twitter-50.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="h-8 px-1" style="filter: grayscale(100%);" src="./images/icons8-behance-50.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <p class="text-medium text-slate-500 text-center block md:hidden">&copy;Copyright Agency 2022</p>
+        </div>
+    </footer>
+
+    <!-- Color Change Section -->
+    <section class="fixed top-2/4 right-2 z-40 cursor-pointer" onclick="toggleColor()" title="Change theme color">
+        <div class="bg-green-700 h-5 w-5 border-2 border-slate-400 m-1"></div>
+        <div class="bg-cyan-700 h-5 w-5 border-2 border-slate-400 m-1"></div>
+    </section>
+    <!-- !! Color Change Section !! -->
+
+    <!--!! Footer Section !!-->
+    <script>
+        const text500 = document.querySelectorAll('.text-green-500')
+        const text600 = document.querySelectorAll('.text-green-600')
+        const text700 = document.querySelectorAll('.text-green-700')
+        const br600 = document.querySelectorAll('.border-green-600')
+        const bg600 = document.querySelectorAll('.bg-green-600')
+
+        const items = document.getElementById('nav-items');
+        let n = 0;
+
+        function toggle() {
+            if (!n) {
+                items.classList.add('left-0');
+                n = 1;
+            } else {
+                items.classList.remove('left-0');
+                n = 0;
+            }
+        }
+
+        function modifyCompClass(list, className) {
+            for(let i = 0; i < list.length; i++) {
+                list[i].classList.toggle(className)
+            }
+        }
+        
+        function toggleColor() {
+            modifyCompClass(text500, 'text-cyan-500')
+            modifyCompClass(text600, 'text-cyan-600')
+            modifyCompClass(text700, 'text-cyan-700')
+            modifyCompClass(br600, 'border-cyan-600')
+            modifyCompClass(bg600, 'bg-cyan-600')
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
